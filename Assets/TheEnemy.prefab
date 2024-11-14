@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5362454062414272713}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0415747, y: -4.3025713, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -106,10 +106,12 @@ MonoBehaviour:
   damage: 10
   attackInterval: 1
   animatorEnemy: {fileID: 0}
+  Coin: {fileID: 4778864768824320341, guid: b78d56e11837a5d4d8e93187d91c4f9e, type: 3}
   blinkDuration: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
   EnemyHP: 5
   isDead: 0
+  totalEnemy: {fileID: 0}
 --- !u!95 &8596088007884978517
 Animator:
   serializedVersion: 5

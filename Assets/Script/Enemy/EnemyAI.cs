@@ -6,10 +6,12 @@ public class EnemyAI : MonoBehaviour
     public Transform player;          // Referensi ke posisi pemain
     public float moveSpeed = 2f;      // Kecepatan bergerak enemy
     public float attackRange = 1f;    // Jarak di mana enemy mulai menyerang pemain
-    public int damage = 1;        // Jumlah damage yang diberikan
+    public float damage = 1;        // Jumlah damage yang diberikan
     public float attackInterval = 1f; // Interval waktu antar serangan
 
     public Animator animatorEnemy;
+
+    public GameObject Coin;
 
     public float blinkDuration;
 
@@ -56,6 +58,11 @@ public class EnemyAI : MonoBehaviour
         {
             EnemySprite.flipX = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(Coin, transform.position, Quaternion.identity);
     }
 
     void MoveTowardsPlayer()

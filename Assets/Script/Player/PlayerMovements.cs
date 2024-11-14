@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovements : MonoBehaviour
 {
 
     public float moveSpeed = 5f; 
-    private Rigidbody2D rb; 
+    private Rigidbody2D rb;
 
-    public int PlayerHealth;
+    public Slider sliderHP;
+
+    public float PlayerHealth;
+
+    public float Regeneration;
 
     void Start()
     {
@@ -21,6 +26,11 @@ public class PlayerMovements : MonoBehaviour
         Move();
 
         GetComponent<Animator>().SetFloat("Speed", rb.velocity.magnitude);
+        sliderHP.value = PlayerHealth;
+        if(PlayerHealth < 100)
+        {
+            PlayerHealth += Regeneration;
+        }
     }
 
     void Move()
@@ -36,7 +46,7 @@ public class PlayerMovements : MonoBehaviour
         rb.velocity = moveDirection * moveSpeed;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         PlayerHealth -= damage;
 
